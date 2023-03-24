@@ -954,7 +954,7 @@ public class TrinoDatabaseMetaData
                 "FROM system.jdbc.tables");
 
         List<String> filters = new ArrayList<>();
-        emptyStringLikeFilter(filters, "TABLE_CAT", catalog);
+        emptyStringLikeFilter(filters, "TABLE_CAT", catalog.toLowerCase());
         emptyStringLikeFilter(filters, "TABLE_SCHEM", schemaPattern);
         optionalStringLikeFilter(filters, "TABLE_NAME", tableNamePattern);
         optionalStringInFilter(filters, "TABLE_TYPE", types);
